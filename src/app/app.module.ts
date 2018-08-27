@@ -28,7 +28,7 @@ import { AuthService } from "./services/auth.service";
 import {HttpModule} from "@angular/http";
 import {AccountService} from "./services/account.service";
 import { LoginComponent } from './authentication/login/login.component';
-import { RegisterComponent } from './authentication/register/register.component';
+//import { RegisterComponent } from './authentication/register/register.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -41,7 +41,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AppComponent,
     FullComponent,
     LoginComponent,
-    RegisterComponent,
+    //RegisterComponent,
     AppHeaderComponent,
     SpinnerComponent,
     AppBlankComponent,

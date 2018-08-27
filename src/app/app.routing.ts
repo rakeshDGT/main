@@ -5,12 +5,22 @@ import { AppBlankComponent } from './layouts/blank/blank.component';
 import {LoginComponent} from "./authentication/login/login.component";
 import {RegisterComponent} from "./authentication/register/register.component";
 
-export const AppRoutes: Routes = [{
+
+//export const AppRoutes: Routes = [
+//{ path: 'login', component: LoginComponent },
+//  { path: 'register', component: RegisterComponent },
+//  { path: '**', redirectTo: '/login' },
+//];
+
+export const AppRoutes: Routes = [
+{ path: 'login', component: LoginComponent },
+{
+    
   path: '',
   component: FullComponent,
   children: [{
     path: '',
-    redirectTo: '/authentication/login',
+    redirectTo: '/login',
     pathMatch: 'full'
   }, {
     path: 'dashboards',
@@ -40,19 +50,15 @@ export const AppRoutes: Routes = [{
     path: 'charts',
     loadChildren: './charts/chartslib.module#ChartslibModule'
   }]
-}, 
-//{
-//  path: '',
-//  component: AppBlankComponent,
-//  children: [{
-//    path: 'authentication',
-//    loadChildren: './authentication/authentication.module#AuthenticationModule'
-//  }]
-//}, 
-{
-   path: '**', redirectTo: '/login' 
-},
-{ path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-];
-//export const routing = RouterModule.forRoot(AppRoutes);
+}, {
+  path: '',
+  component: AppBlankComponent,
+  children: [{
+    path: 'authentication',
+    loadChildren: './authentication/authentication.module#AuthenticationModule'
+  }]
+}, {
+  path: '**',
+  redirectTo: 'authentication/404'
+}];
+ 
